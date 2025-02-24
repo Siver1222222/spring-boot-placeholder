@@ -1,4 +1,4 @@
-FROM maven:3.8-eclipse-temurin-17 as build
+FROM maven:3.8-eclipse-temurin-21 AS build
 WORKDIR /app
 
 # Copy the Maven POM and source code
