@@ -5,6 +5,7 @@ import com.example.student.mapper.CourseMapper;
 import com.example.student.model.Course;
 import com.example.student.model.Professor;
 import com.example.student.model.Student;
+import com.example.student.repository.AdvancedQueryRepository;
 import com.example.student.repository.CourseRepository;
 import com.example.student.repository.ProfessorRepository;
 import com.example.student.repository.StudentRepository;
@@ -12,6 +13,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -29,6 +31,7 @@ public class AcademicService {
     private final CourseRepository courseRepository;
     private final StudentRepository studentRepository;
     private final CourseMapper courseMapper;
+
 
     @PersistenceContext
     private EntityManager entityManager;

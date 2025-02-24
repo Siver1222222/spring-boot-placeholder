@@ -18,7 +18,7 @@ public interface AdvancedQueryRepository extends JpaRepository<Course, Long> {
                     "GROUP BY c.id " +
                     "HAVING enrollment_count >= :minEnrollment",
             nativeQuery = true
-    )
+    ) // nativeQuery = false means that the query is in JPQL
     List<Course> findCoursesWithMinEnrollment(@Param("minEnrollment") int minEnrollment);
 
     @Query(
