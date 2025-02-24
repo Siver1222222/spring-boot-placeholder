@@ -6,7 +6,7 @@ COPY pom.xml .
 COPY src ./src
 
 # Package the application
-RUN --mount=type=cache,target=/root/.m2 ./mvnw package -DskipTests
+RUN --mount=type=cache,target=/root/.m2 mvn package -DskipTests
 
 # Create the runtime image
 FROM eclipse-temurin:17-jre
