@@ -14,11 +14,11 @@ WORKDIR /app
 
 # Environment variables
 ENV SPRING_PROFILE=prod
-ENV DATABASE_URL=jdbc:postgresql://postgres:5432/uni?createDatabaseIfNotExist=true&user=postgres&password=123
-ENV DDL_MODE=none
+ENV DATABASE_URL=jdbc:postgresql://noroff-postgres.postgres.database.azure.com:5432/postgres?user=postgres&password=Pt@123456&sslmode=require
+ENV DDL_MODE=create
 ENV DB_SEED_MODE=never
 ENV SHOW_JPA_SQL=false
-ENV INIT_MODE=never
+ENV INIT_MODE=always
 
 # Copy the JAR file from the build stage
 COPY --from=build /app/target/*.jar app.jar
