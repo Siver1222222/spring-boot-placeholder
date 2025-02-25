@@ -14,9 +14,7 @@ WORKDIR /app
 
 # Environment variables
 ENV SPRING_PROFILE=prod
-ENV DATABASE_URL=jdbc:postgresql://postgres:5432/uni
-ENV DATABASE_USERNAME=postgres
-ENV DATABASE_PASSWORD=123
+ENV DATABASE_URL=jdbc:postgresql://postgres:5432/uni??createDatabaseIfNotExist=true&user=postgres&password=123
 ENV DDL_MODE=validate
 ENV SHOW_JPA_SQL=false
 ENV INIT_MODE=never
