@@ -14,7 +14,7 @@ WORKDIR /app
 
 # Environment variables
 ENV SPRING_PROFILE=prod
-ENV DATABASE_URL=jdbc:postgresql://noroff-postgres.postgres.database.azure.com:5432/uni?createDatabaseIfNotExist=true&user=postgres&password=Pt@123456&sslmode=require
+#ENV DATABASE_URL=jdbc:postgresql://noroff-postgres.postgres.database.azure.com:5432/uni?createDatabaseIfNotExist=true&user=postgres&password=Pt@123456&sslmode=require
 ENV DDL_MODE=create
 ENV DB_SEED_MODE=never
 ENV SHOW_JPA_SQL=true
