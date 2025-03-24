@@ -1,15 +1,14 @@
-# Student Management System
+# Product Management System - Placeholder Project
 
-A comprehensive Spring Boot application for managing university students, courses, and professors, featuring a REST API with OpenAPI documentation.
+A Spring Boot application template for building a product management system with REST API and OpenAPI documentation. This placeholder project serves as a starting point for your assignment and can be adapted to your specific requirements.
 
 ## Features
 
-- Student enrollment and management
-- Course creation and management
-- Professor assignments and advising
+- Basic CRUD operations for product management
 - RESTful API with comprehensive documentation
 - PostgreSQL database integration
 - DTO pattern implementation
+- Ready-to-use project structure
 
 ## Tech Stack
 
@@ -30,20 +29,15 @@ Before you begin, ensure you have:
 
 ## Getting Started
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/student-management.git
-cd student-management
-```
-
+1. Clone the repository
 2. Create PostgreSQL database:
 ```sql
-CREATE DATABASE uni;
+CREATE DATABASE myprojectdb;
 ```
 
 3. Configure database connection in `src/main/resources/application.properties`:
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/uni
+spring.datasource.url=jdbc:postgresql://localhost:5432/myprojectdb
 spring.datasource.username=your_username
 spring.datasource.password=your_password
 ```
@@ -66,92 +60,103 @@ Access the Swagger UI to explore and test the API:
 - Swagger UI: `http://localhost:8080/swagger-ui.html`
 - OpenAPI JSON: `http://localhost:8080/v3/api-docs`
 
+### Testing with Swagger UI
+
+1. Start your Spring Boot application
+2. Go to `http://localhost:8080/swagger-ui.html` in your browser
+3. Explore and test the available endpoints:
+    - Expand the "Product Controller" section to see all endpoints
+    - Click on an endpoint (e.g., GET `/api/v1/products`)
+    - Click "Try it out", then "Execute"
+    - View the response
+
+### Testing with Postman
+
+1. Download and install [Postman](https://www.postman.com/downloads/)
+2. Create requests for the following endpoints:
+    - GET `/api/v1/products` - List all products
+    - GET `/api/v1/products/{id}` - Get product by ID
+    - POST `/api/v1/products` - Create a new product
+    - PUT `/api/v1/products/{id}` - Update a product
+    - DELETE `/api/v1/products/{id}` - Delete a product
+
+Example POST request body:
+```json
+{
+  "name": "New Product",
+  "description": "Product description",
+  "price": 49.99,
+  "quantity": 10
+}
+```
+
 ## Project Structure
 
 ```
-src/main/java/com/example/student/
+src/main/java/com/myproject/
 ├── config/          # Configuration classes
 ├── controller/      # REST controllers
-├── model/          # Entity classes
-├── repository/     # Data access layer
-├── service/        # Business logic
-├── dto/            # Data Transfer Objects
-├── mapper/         # Object mappers
-└── exception/      # Exception handling
+├── model/           # Entity classes
+├── repository/      # Data access layer
+├── service/         # Business logic
+├── dto/             # Data Transfer Objects
+├── mapper/          # Object mappers
+└── exception/       # Exception handling
 ```
 
-## Key Features Explained
+## Key Components
 
-### Student Management
-- Create and update student profiles
-- Track academic progress
-- Manage course enrollments
+### Entity
+The `Product` entity represents a product in the database with fields:
+- id (primary key)
+- name
+- description
+- price
+- quantity
 
-### Course Management
-- Create and modify courses
-- Track enrollments
-- Assign professors
+### Repository
+The `ProductRepository` provides data access methods:
+- Basic CRUD operations (from JpaRepository)
+- Custom finder methods
 
-### Professor Management
-- Manage professor information
-- Assign courses
-- Track student advisees
+### Service
+The `ProductService` implements business logic:
+- Get all products
+- Get product by ID
+- Create new product
+- Update existing product
+- Delete product
 
-## Contributing
+### Controller
+The `ProductController` defines REST endpoints:
+- GET `/api/v1/products` - Get all products
+- GET `/api/v1/products/{id}` - Get product by ID
+- POST `/api/v1/products` - Create new product
+- PUT `/api/v1/products/{id}` - Update product
+- DELETE `/api/v1/products/{id}` - Delete product
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## Customization Guide
+
+1. **Change Entity**: Modify or replace the `Product` entity with your own domain entities
+2. **Define Relationships**: Set up one-to-many, many-to-many, or one-to-one relationships between your entities
+3. **Create Repositories**: Add repositories for your new entities
+4. **Implement Services**: Add business logic in the service layer
+5. **Build Controllers**: Define REST endpoints for your entities
+6. **Generate DTOs**: Create DTOs for data transfer
+7. **Update Mappers**: Ensure mappers correctly convert between entities and DTOs
+
+## Database Schema
+
+For the placeholder project, there is a single table:
+- Product (id, name, description, price, quantity)
+
+When customizing, you'll need to define your own database schema with the necessary tables and relationships based on your requirements.
 
 ## Running Tests
 
 ```bash
 mvn test
 ```
-
-## Database Schema
-
-The application uses the following core entities:
-- Student
-- Course
-- Professor
-- StudentProfile
-
-Relationships include:
-- One-to-One between Student and StudentProfile
-- Many-to-Many between Student and Course
-- Many-to-One between Course and Professor
-- Many-to-Many between Student and Professor (advisors)
-
-## API Examples
-
-### Create a New Student
-```bash
-POST /api/v1/academic/students
-{
-    "name": "John Doe",
-    "major": "Computer Science",
-    "profile": {
-        "email": "john@university.edu",
-        "phoneNumber": "123-456-7890"
-    }
-}
-```
-
-### Enroll in a Course
-```bash
-POST /api/v1/academic/courses/{courseId}/enroll/{studentId}
-```
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Contact
-
-Project Link: [https://github.com/peyman-t/student-management](https://github.com/peyman-t/student-management)
 
 ## Acknowledgments
 
