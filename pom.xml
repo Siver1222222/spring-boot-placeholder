@@ -82,10 +82,14 @@
 
     <build>
         <plugins>
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>  <!-- Bruk en stabil versjon som 3.8.1 -->
                 <configuration>
+                    <source>17</source> <!-- Bruk Java 17 som kilde -->
+                    <target>17</target> <!-- Bruk Java 17 som mål -->
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.mapstruct</groupId>
