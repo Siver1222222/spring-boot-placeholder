@@ -1,6 +1,6 @@
-package com.myproject.repository;
+package com.socialhub.repository;
 
-import com.myproject.model.Product;
+import com.socialhub.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

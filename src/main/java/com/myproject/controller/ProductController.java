@@ -1,7 +1,7 @@
-package com.myproject.controller;
+package com.socialhub.controller;
 
-import com.myproject.dto.*;
-import com.myproject.service.ProductService;
+import com.socialhub.dto.*;
+import com.socialhub.service.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

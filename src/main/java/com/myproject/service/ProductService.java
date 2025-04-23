@@ -1,9 +1,9 @@
-package com.myproject.service;
+package com.socialhub.service;
 
-import com.myproject.dto.*;
-import com.myproject.mapper.ProductMapper;
-import com.myproject.model.Product;
-import com.myproject.repository.ProductRepository;
+import com.socialhub.dto.*;
+import com.socialhub.mapper.ProductMapper;
+import com.socialhub.model.Product;
+import com.socialhub.repository.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.myproject.model;
+package com.socialhub.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;

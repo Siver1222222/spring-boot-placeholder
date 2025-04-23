@@ -1,4 +1,4 @@
-package com.myproject.exception;
+package com.socialhub.exception;
 
 public class UserNotFoundException extends RuntimeException {
     public UserNotFoundException(String message) {

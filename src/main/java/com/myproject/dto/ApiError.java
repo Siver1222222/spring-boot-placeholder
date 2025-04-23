@@ -1,4 +1,4 @@
-package com.myproject.dto;
+package com.socialhub.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;

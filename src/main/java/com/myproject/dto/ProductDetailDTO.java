@@ -1,4 +1,4 @@
-package com.myproject.dto;
+package com.socialhub.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

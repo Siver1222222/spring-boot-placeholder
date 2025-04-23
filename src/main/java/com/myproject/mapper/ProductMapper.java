@@ -1,8 +1,8 @@
-package com.myproject.mapper;
+package com.socialhub.mapper;
 
 import org.mapstruct.*;
-import com.myproject.dto.*;
-import com.myproject.model.Product;
+import com.socialhub.dto.*;
+import com.socialhub.model.Product;
 import java.util.List;
 
 @Mapper(componentModel = "spring",

@@ -1,4 +1,4 @@
-package com.myproject.config;
+package com.socialhub.config;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityManager;
